@@ -41,7 +41,7 @@ useEffect(() => {
 
 return (
   <>
-    <h1>Will it blend?</h1>
+    <NewPost/>
   </>
 )
 
