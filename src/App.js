@@ -1,5 +1,8 @@
 import './App.css';
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useReducer} from 'react'
+
+import Edit from './components/Edit'
+import NewPost from './components/NewPost'
 
 const App = () => {
   const [posts, setPosts] = useState([])
@@ -35,9 +38,6 @@ const handleUpdate = (editBlogPost) => {
 useEffect(() => {
   getPosts()
 },[])
-
-
-
 
 }
 
