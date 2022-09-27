@@ -32,6 +32,10 @@ const handleUpdate = (editBlogPost) => {
   })
 }
 
+useEffect(() => {
+  getPosts()
+},[])
+
 
 
 
