@@ -27,16 +27,15 @@ const NewPost = (props) => {
         <>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="image">Image: </label>
-                <input type="text" name="image" value={blogPost.image} onChange={handleChange} />
+                <input type="text" name="image" onChange={handleChange} />
                 <br />
                 <br />
                 <label htmlFor="artist">Artist: </label>
-                <input type="text" name="artist" value={blogPost.artist} onChange={handleChange} />
+                <input type="text" name="artist" onChange={handleChange} />
                 <br />
                 <br />
                 <label htmlFor="description">Description: </label>
-                <input type="text" name="description" value={blogPost.description} onChange={handleChange}
-                />
+                <input type="text" name="description" onChange={handleChange} />
                 <br />
                 <br />
                 <input type="submit" />
@@ -44,3 +43,5 @@ const NewPost = (props) => {
         </>
     );
 };
+
+export default NewPost

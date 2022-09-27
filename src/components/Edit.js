@@ -12,3 +12,5 @@ const Edit = (props) => {
         props.handleUpdate(blogPost)
     }
 }
+
+export default Edit
