@@ -51,7 +51,12 @@ const mainPage = () => {
 return (
   <>
     <Edit/>
-    <NewPost/>
+    <NewPost handleCreate = {handleCreate}/>
+    <div>
+      {posts.map ((thePost) => {
+        <h3>image {thePost.image}</h3>
+      })}
+    </div>
 
   </>
 )
