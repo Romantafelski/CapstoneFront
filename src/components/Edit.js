@@ -16,6 +16,7 @@ const Edit = (props) => {
 
     return (
         <>
+        <div className="grid-container">
         <details>
            <form onSubmit={handleSubmit}>
             <label htmlFor="image">Image Address: </label>
@@ -33,6 +34,7 @@ const Edit = (props) => {
             <input type="submit"/>
            </form>
             </details>
+            </div>
         </>
     )
 }

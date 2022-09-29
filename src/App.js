@@ -52,21 +52,30 @@ const App = () => {
 
   return (
     <>
+    <div>
       <NewPost handleCreate={handleCreate} />
       <div>
         {posts.map((blogPost) => {
           return (
             <>
+            <div>
             <br/>
             <br/>
-              <img src={blogPost.image} alt="..." />
+            <div className='card-flex-article'>
+              <img className='image is-32x32'  id='responsive-img'  src={blogPost.image} alt="..." />
+              </div>
               <p>{blogPost.artist}</p>
+              <br/>
               <p>{blogPost.description}</p>
-              {/* <button onClick={showEditForm}>Edit</button> */}
-              <button onClick={() => {handleDelete(blogPost)}} value={blogPost.id}>Delete post</button>
-              <Edit handleUpdate={handleUpdate} /></>
+              <br/>
+              <Edit handleUpdate={handleUpdate} />
+              <br/>
+              <button className='.btn' onClick={() => {handleDelete(blogPost)}} value={blogPost.id}>Delete</button>
+        </div>
+              </>
           )
         })}
+      </div>
       </div>
     </>
   )

@@ -25,7 +25,8 @@ const NewPost = (props) => {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+        <div>
+            <form className="" onSubmit={handleSubmit}>
                 <label htmlFor="image">Image: </label>
                 <input type="text" name="image" value={blogPost.image} onChange={handleChange} />
                 <br />
@@ -40,6 +41,7 @@ const NewPost = (props) => {
                 <br />
                 <input type="submit" />
             </form>
+            </div>
         </>
     );
 };
