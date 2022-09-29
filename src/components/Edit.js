@@ -18,7 +18,7 @@ const Edit = (props) => {
         <>
         <div className="grid-container">
         <details>
-           <form onSubmit={handleSubmit}>
+           <form className="mb-3" onSubmit={handleSubmit}>
             <label htmlFor="image">Image Address: </label>
             <input type="text" name="image" value={blogPost.image} onChange={handleChange}/>
             <br/>

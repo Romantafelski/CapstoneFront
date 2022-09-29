@@ -1,6 +1,8 @@
 import './App.css';
 import { useState, useEffect, useReducer } from 'react'
 import axios from 'axios'
+import Button from 'react-bootstrap/Button'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 
 import Edit from './components/Edit'
@@ -71,7 +73,7 @@ const App = () => {
               <br/>
               <Edit handleUpdate={handleUpdate} />
               <br/>
-              <button className='.btn' onClick={() => {handleDelete(blogPost)}} value={blogPost.id}>Delete</button>
+              <button variant="dark" onClick={() => {handleDelete(blogPost)}} value={blogPost.id}>Delete</button>
         </div>
               </>
           )

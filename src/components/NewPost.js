@@ -26,7 +26,7 @@ const NewPost = (props) => {
     return (
         <>
         <div>
-            <form className="" onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <label htmlFor="image">Image: </label>
                 <input type="text" name="image" value={blogPost.image} onChange={handleChange} />
                 <br />
