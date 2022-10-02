@@ -25,22 +25,23 @@ const NewPost = (props) => {
 
     return (
         <>
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="image">Image: </label>
-                <input type="text" name="image" value={blogPost.image} onChange={handleChange} />
+        <div class="newForm mb-3"> 
+            <form className="work" onSubmit={handleSubmit}>
+                <label for="formFileMultiple" class="form-label" htmlFor="image">Image: </label>
+                <input class="form-control" type="text" name="image" value={blogPost.image} onChange={handleChange} />
                 <br />
                 <br />
-                <label htmlFor="artist">Artist: </label>
-                <input type="text" name="artist" value={blogPost.artist} onChange={handleChange} />
+                <label class="form-label" htmlFor="artist">Artist: </label>
+                <input class="form-control" type="text" name="artist" value={blogPost.artist} onChange={handleChange} />
                 <br />
                 <br />
-                <label htmlFor="description">Description: </label>
-                <input type="text" name="description" value={blogPost.description} onChange={handleChange} />
+                <label class="form-label" htmlFor="description">Description: </label>
+                <input class="form-control" type="text" name="description" value={blogPost.description} onChange={handleChange} />
                 <br />
                 <br />
-                <input type="submit" />
+                <input className="btn btn-secondary" type="submit" />
             </form>
+            <img  className="newTattoo" src="https://www.dubuddha.org/wp-content/uploads/2018/10/Floral-Portrait-Tattoo-by-Samurai-Standoff.jpg"/>
             </div>
         </>
     );

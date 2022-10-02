@@ -1,8 +1,8 @@
 import './App.css';
 import { useState, useEffect, useReducer } from 'react'
 import axios from 'axios'
-import Button from 'react-bootstrap/Button'
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+
+
 
 
 import Edit from './components/Edit'
@@ -55,25 +55,26 @@ const App = () => {
 
   return (
     <>
+    <div className='header'>InkPost.com</div>
     <div>
+      <div className="container-md wholeCard">
       <NewPost handleCreate={handleCreate} />
-      <div>
         {posts.map((blogPost) => {
           return (
             <>
             <div>
             <br/>
             <br/>
-            <div className='card-flex-article'>
-              <img className='image is-32x32'  id='responsive-img'  src={blogPost.image} alt="..." />
-              </div>
-              <p>{blogPost.artist}</p>
+            <div id='cards'  className='post cardClass  border border-5'>
+              <img class="img-responsive img-thumbnail imgSize" alt="Responsive image"  src={blogPost.image} />
+              <p className='info'>{blogPost.artist}</p>
               <br/>
-              <p>{blogPost.description}</p>
+              <p className='info' >{blogPost.description}</p>
               <br/>
               <Edit handleUpdate={handleUpdate} />
               <br/>
-              <button variant="dark" onClick={() => {handleDelete(blogPost)}} value={blogPost.id}>Delete</button>
+              <button class="btn btn-danger" onClick={() => {handleDelete(blogPost)}} value={blogPost.id}>Delete</button>
+              </div>
         </div>
               </>
           )
