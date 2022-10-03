@@ -18,13 +18,14 @@ const Edit = (props) => {
         <>
         <div className="grid-container">
         <details className="details">
+            <summary>Edit</summary>
            <form className="mb-3" onSubmit={handleSubmit}>
             <label htmlFor="image">Image Address: </label>
             <input type="text" name="image" value={blogPost.image} onChange={handleChange}/>
             <br/>
             <br/>
             <label htmlFor="artist">Artist Name: </label>
-            <input type="text" className="artist" value={blogPost.artist} onChange={handleChange}/>
+            <input  type="text" name="artist" value={blogPost.artist} onChange={handleChange}/>
             <br/>
             <br/>
             <label htmlFor="description">Description: </label>

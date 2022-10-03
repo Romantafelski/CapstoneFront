@@ -37,9 +37,10 @@ const App = () => {
   }
 
   const handleUpdate = (editBlogPost) => {
-    axios.put('http://localhost:8000/api/tattoo' + editBlogPost.id, editBlogPost).then((response) => {
+    axios
+    .put('http://localhost:8000/api/tattoo/' + editBlogPost.id, editBlogPost).then((response) => {
       setPosts(posts.map((blogPost) => {
-        return editBlogPost.id !== editBlogPost.id ? blogPost : editBlogPost
+        return blogPost.id !== editBlogPost.id ? blogPost : editBlogPost
 
       }))
     })
@@ -71,7 +72,7 @@ const App = () => {
               <br/>
               <p className='info' >{blogPost.description}</p>
               <br/>
-              <Edit handleUpdate={handleUpdate} />
+              <Edit handleUpdate={handleUpdate} blogPost={blogPost} />
               <br/>
               <button class="btn btn-danger" onClick={() => {handleDelete(blogPost)}} value={blogPost.id}>Delete</button>
               </div>
