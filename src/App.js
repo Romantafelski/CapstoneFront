@@ -1,6 +1,9 @@
+
 import './App.css';
 import { useState, useEffect, useReducer } from 'react'
 import axios from 'axios'
+
+
 
 
 import Edit from './components/Edit'
@@ -12,7 +15,7 @@ const App = () => {
 
 
   const getPosts = () => {
-    axios.get('https://evening-taiga-64655.herokuapp.com/api/tattoo').then(
+    axios.get('http://localhost:8000/api/tattoo').then(
       (response) => setPosts(response.data),
       (err) => console.error(err),
     ).catch((error) => console.error(error))
@@ -20,7 +23,7 @@ const App = () => {
 
   const handleCreate = (addBlogPost) => {
     // let nextId = products[products.length - 1].id + 1
-    axios.post('https://evening-taiga-64655.herokuapp.com/api/tattoo', addBlogPost)
+    axios.post('http://localhost:8000/api/tattoo', addBlogPost)
       .then((response) => {
         // addItem.id = nextId
         setPosts([...posts, response.data])
@@ -28,22 +31,20 @@ const App = () => {
   }
 
   const handleDelete = (deleteBlogPost) => {
-    axios.delete('https://evening-taiga-64655.herokuapp.com/api/tattoo/' + deleteBlogPost.id).then
+    axios.delete('http://localhost:8000/api/tattoo/' + deleteBlogPost.id).then
       ((response) => {
         setPosts(posts.filter(blogPost => blogPost.id !== deleteBlogPost.id))
       })
   }
 
   const handleUpdate = (editBlogPost) => {
-    axios
-    .put('https://evening-taiga-64655.herokuapp.com/api/tattoo/' + editBlogPost.id, editBlogPost).then((response) => {
+    axios.put('http://localhost:8000/api/tattoo' + editBlogPost.id, editBlogPost).then((response) => {
       setPosts(posts.map((blogPost) => {
-        return blogPost.id !== editBlogPost.id ? blogPost : editBlogPost
+        return editBlogPost.id !== editBlogPost.id ? blogPost : editBlogPost
 
       }))
     })
   }
-  
 
   useEffect(() => {
     getPosts()
@@ -71,7 +72,7 @@ const App = () => {
               <br/>
               <p className='info' >{blogPost.description}</p>
               <br/>
-              <Edit handleUpdate={handleUpdate} blogPost={blogPost} />
+              <Edit handleUpdate={handleUpdate} />
               <br/>
               <button class="btn btn-danger" onClick={() => {handleDelete(blogPost)}} value={blogPost.id}>Delete</button>
               </div>
